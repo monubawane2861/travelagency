@@ -10,6 +10,7 @@ import {
 import { GiPathDistance } from "react-icons/gi";
 import { MdFamilyRestroom, MdSafetyCheck } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
+import { Link } from "react-router-dom";
 const About = () => {
   const stats = [
     {
@@ -240,12 +241,19 @@ const About = () => {
               Experience the SafarSaga Travel difference for your next journey
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                Book Your Trip
-              </button>
-              <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-                Contact Us
-              </button>
+              <Link to="/book">
+                {" "}
+                <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                  Book Your Trip
+                </button>
+              </Link>
+
+              <Link to="/contact">
+                {" "}
+                <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
         </section>

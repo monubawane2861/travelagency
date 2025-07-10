@@ -1,18 +1,39 @@
 // src/components/common/Header/Header.jsx
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const phoneNumber = "9226409449"; // Replace with your actual phone number
+  const phoneNumber = "9226409449";
+  const location = useLocation();
+  const menuRef = useRef(null);
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMenuOpen ? "hidden" : "";
+    return () => (document.body.style.overflow = "");
+  }, [isMenuOpen]);
+
+  const navLinks = [
+    { path: "/", label: "Home" },
+    { path: "/about", label: "About Us" },
+    { path: "/cars", label: "Our Vehicles" },
+    { path: "/reviews", label: "Reviews" },
+    { path: "/contact", label: "Contact" },
+  ];
+
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg sticky top-0 z-50 backdrop-blur-md transition-all duration-300">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-8 w-8 text-blue-600"
@@ -33,49 +54,36 @@ const Header = () => {
             </span>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <nav className="hidden md:flex space-x-8">
-            <Link
-              to="/"
-              className="text-white hover:text-yellow-300 font-medium transition duration-300"
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="text-white hover:text-yellow-300 font-medium transition duration-300"
-            >
-              About Us
-            </Link>
-            <Link
-              to="/cars"
-              className="text-white hover:text-yellow-300 font-medium transition duration-300"
-            >
-              Our Vehicles
-            </Link>
-            <Link
-              to="/reviews"
-              className="text-white hover:text-yellow-300 font-medium transition duration-300"
-            >
-              Reviews
-            </Link>
-            <Link
-              to="/contact"
-              className="text-white hover:text-yellow-300 font-medium transition duration-300"
-            >
-              Contact
-            </Link>
+            {navLinks.map(({ path, label }) => (
+              <Link
+                key={path}
+                to={path}
+                className={`text-white font-medium transition duration-300 hover:text-yellow-300 ${
+                  isActive(path) ? "text-yellow-300" : ""
+                }`}
+              >
+                {label}
+              </Link>
+            ))}
           </nav>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center">
+            <a href={`tel:${phoneNumber}`} className="mr-4">
+              <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300">
+                Call
+              </button>
+            </a>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="text-white focus:outline-none"
+              className="text-white transition-transform duration-300"
+              aria-label="Toggle menu"
             >
               {isMenuOpen ? (
                 <svg
-                  className="h-8 w-8"
+                  className="h-8 w-8 transform rotate-180"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -105,54 +113,45 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Call Now Button (Desktop) */}
+          {/* Call Now (Desktop) */}
           <a href={`tel:${phoneNumber}`} className="hidden md:block">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105">
               Call Now
             </button>
           </a>
         </div>
 
         {/* Mobile Menu */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 space-y-3">
-            <Link
-              to="/"
-              className="block text-white hover:text-yellow-300 px-2 py-1"
+        <div
+          ref={menuRef}
+          className={`fixed left-0 right-0 bg-blue-800 backdrop-blur-md transition-all duration-500 ease-in-out overflow-hidden md:hidden z-40 ${
+            isMenuOpen
+              ? "top-20 h-[calc(100vh-5rem)] opacity-100"
+              : "top-[-100vh] h-0 opacity-0"
+          }`}
+        >
+          <div className="container mx-auto px-4 py-6 space-y-4">
+            {navLinks.map(({ path, label }) => (
+              <Link
+                key={path}
+                to={path}
+                className="block text-white hover:text-yellow-300 px-2 py-3 text-lg border-b border-blue-700 transition-colors duration-300"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {label}
+              </Link>
+            ))}
+            <a
+              href={`tel:${phoneNumber}`}
+              className="block mt-6"
+              onClick={() => setIsMenuOpen(false)}
             >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className="block text-white hover:text-yellow-300 px-2 py-1"
-            >
-              About Us
-            </Link>
-            <Link
-              to="/cars"
-              className="block text-white hover:text-yellow-300 px-2 py-1"
-            >
-              Our Vehicles
-            </Link>
-            <Link
-              to="/reviews"
-              className="block text-white hover:text-yellow-300 px-2 py-1"
-            >
-              Reviews
-            </Link>
-            <Link
-              to="/contact"
-              className="block text-white hover:text-yellow-300 px-2 py-1"
-            >
-              Contact
-            </Link>
-            <a href={`tel:${phoneNumber}`} className="block mt-4">
-              <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300">
+              <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 text-lg">
                 Call Now
               </button>
             </a>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

@@ -12,6 +12,7 @@ import { MdFamilyRestroom, MdSecurity } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
 import { Link } from "react-router-dom";
 const Home = () => {
+  const phoneNumber = "9226409449";
   const featuredTours = [
     {
       id: 1,
@@ -205,12 +206,16 @@ const Home = () => {
               experience
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                Call Now
-              </button>
-              <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-                Get a Quote
-              </button>
+              <a href={`tel:${phoneNumber}`} className="hidden md:block">
+                <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                  Call Now
+                </button>
+              </a>
+              <Link to="/about">
+                <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                  Get a Quote
+                </button>
+              </Link>
             </div>
           </div>
         </section>
