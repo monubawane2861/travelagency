@@ -65,7 +65,7 @@ const About = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                About Swami Nandan Tours
+                About SafarSaga Travel
               </h1>
               <p className="text-xl mb-8">
                 Your trusted travel partner since 2010
@@ -91,10 +91,10 @@ const About = () => {
                 </h2>
                 <div className="w-20 h-1 bg-yellow-500 mb-6"></div>
                 <p className="text-gray-600 mb-4">
-                  Founded in 2010 by Rajesh Nandan, Swami Nandan Tours began
-                  with just 2 vehicles and a vision to provide exceptional
-                  travel experiences. Today, we're one of the most trusted
-                  travel agencies in the region.
+                  Founded in 2010 by Rajesh Nandan,SafarSaga Travel began with
+                  just 2 vehicles and a vision to provide exceptional travel
+                  experiences. Today, we're one of the most trusted travel
+                  agencies in the region.
                 </p>
                 <p className="text-gray-600 mb-6">
                   What started as a small family business has grown into a fleet
@@ -237,7 +237,7 @@ const About = () => {
               Ready to Travel With Us?
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Experience the Swami Nandan Tours difference for your next journey
+              Experience the SafarSaga Travel difference for your next journey
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">

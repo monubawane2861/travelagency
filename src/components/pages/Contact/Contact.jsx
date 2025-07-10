@@ -169,8 +169,8 @@ const Contact = () => {
                   </div>
                   <h3 className="font-bold text-lg">Email</h3>
                 </div>
-                <p className="text-gray-600">info@swaminandantours.com</p>
-                <p className="text-gray-600">bookings@swaminandantours.com</p>
+                <p className="text-gray-600">info@safarsagatravel.com</p>
+                <p className="text-gray-600">bookings@safarsagatravel.com</p>
                 <p className="text-green-600 font-medium mt-2">
                   Response within 24 hours
                 </p>
@@ -210,7 +210,7 @@ const Contact = () => {
               </h3>
               <div className="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden">
                 <iframe
-                  title="Swami Nandan Tours Location"
+                  title="safarsaga travel Location"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.566284143591!2d77.22702231508237!3d28.61361198242598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce2daa9db4d07%3A0x9b3f8c1b6e1a881a!2sIndia%20Gate!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
                   width="100%"
                   height="300"

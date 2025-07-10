@@ -22,7 +22,7 @@ const Footer = () => {
             <div className="flex items-center space-x-2">
               <MdDirectionsBus className="text-yellow-400 text-3xl" />
               <h3 className="text-2xl font-bold font-serif">
-                Swami Nandan Tours
+                SafarSaga Travel
               </h3>
             </div>
             <p className="text-gray-300">
@@ -121,7 +121,7 @@ const Footer = () => {
               </div>
               <div className="flex items-start space-x-3">
                 <FaEnvelope className="text-yellow-400 mt-1" />
-                <p className="text-gray-300">info@swaminandantours.com</p>
+                <p className="text-gray-300">info@safarsagtravel.com</p>
               </div>
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-yellow-400 mt-1" />
@@ -160,7 +160,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} Swami Nandan Tours. All Rights
+            &copy; {new Date().getFullYear()} safarsaga travel. All Rights
             Reserved.
           </p>
           <p className="mt-1 text-sm">Designed with ❤️ for travelers</p>

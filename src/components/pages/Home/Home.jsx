@@ -44,7 +44,7 @@ const Home = () => {
       id: 2,
       name: "Priya Sharma",
       comment:
-        "Our family trip was made comfortable thanks to Swami Nandan Tours.",
+        "Our family trip was made comfortable thanks to safarsagatravel Tours.",
       rating: 4,
     },
     {
@@ -60,7 +60,7 @@ const Home = () => {
       <CallNow />
       <div className="overflow-hidden">
         {/* Hero Section */}
-        <section className="relative bg-blue-900 text-white">
+        <section className=" bg-blue-900 text-white">
           <div className="container mx-auto px-4 py-32 md:py-40">
             <div className="max-w-2xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
@@ -84,7 +84,7 @@ const Home = () => {
         </section>
 
         {/* Features Section */}
-        <section className="py-16 bg-gray-100">
+        <section className="py-16 bg-gray-100 mt-4">
           <div className="container mx-auto px-4">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">

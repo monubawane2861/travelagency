@@ -109,7 +109,7 @@ const CallNow = () => {
 
           {/* Footer */}
           <div className="bg-gray-100 p-3 text-center text-sm text-gray-600">
-            Swami Nandan Tours Support
+            SafarSaga Travel Support
           </div>
         </div>
       )}
