@@ -17,6 +17,7 @@ import Review from "./components/pages/Review/Review";
 import CallNow from "./components/pages/callnowchatboot/CallNow";
 import Book from "./components/pages/book/Book";
 import Services from "./components/pages/services/Services";
+import NotFound from "./components/pages/NotFound/NotFound";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -43,6 +44,7 @@ function App() {
             <Route path="/call" element={<CallNow />} />
             <Route path="/book" element={<Book />} />
             <Route path="/services" element={<Services />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
       </div>

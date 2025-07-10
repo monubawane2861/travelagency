@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
@@ -7,18 +7,21 @@ const Header = () => {
   const location = useLocation();
   const menuRef = useRef(null);
 
-  // Close menu on route change
+  // Close menu when route changes
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
 
-  // Prevent scrolling when the mobile menu is open
+  // Prevent body scrolling when menu is open
   useEffect(() => {
-    const originalStyle = window.getComputedStyle(document.body).overflow;
-    document.body.style.overflow = isMenuOpen ? "hidden" : originalStyle;
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
 
     return () => {
-      document.body.style.overflow = originalStyle;
+      document.body.style.overflow = "";
     };
   }, [isMenuOpen]);
 
@@ -30,23 +33,15 @@ const Header = () => {
     { path: "/contact", label: "Contact" },
   ];
 
-  // Memoize the isActive function
-  const isActive = useCallback(
-    (path) => location.pathname === path,
-    [location.pathname]
-  );
-
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
+  const isActive = (path) => location.pathname === path;
 
   return (
-    <header className="bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg sticky top-0 z-50 backdrop-blur-md transition-all duration-300">
+    <header className="bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow-lg">
+            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-8 w-8 text-blue-600"
@@ -67,17 +62,17 @@ const Header = () => {
             </span>
           </Link>
 
-          {/* Desktop Nav */}
+          {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
-            {navLinks.map(({ path, label }) => (
+            {navLinks.map((link) => (
               <Link
-                key={path}
-                to={path}
-                className={`text-white font-medium transition duration-300 hover:text-yellow-300 ${
-                  isActive(path) ? "text-yellow-300" : ""
+                key={link.path}
+                to={link.path}
+                className={`text-white hover:text-yellow-300 font-medium transition duration-300 ${
+                  isActive(link.path) ? "text-yellow-300" : ""
                 }`}
               >
-                {label}
+                {link.label}
               </Link>
             ))}
           </nav>
@@ -85,19 +80,18 @@ const Header = () => {
           {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <a href={`tel:${phoneNumber}`} className="mr-4">
-              <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition-all duration-300">
+              <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-300">
                 Call
               </button>
             </a>
             <button
-              onClick={toggleMenu}
-              className="text-white transition-transform duration-300"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="text-white focus:outline-none"
               aria-label="Toggle menu"
-              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
                 <svg
-                  className="h-8 w-8 transform rotate-180"
+                  className="h-8 w-8"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -127,9 +121,9 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Call Now (Desktop) */}
+          {/* Call Now Button (Desktop) */}
           <a href={`tel:${phoneNumber}`} className="hidden md:block">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full shadow-md transition-all duration-300 transform hover:scale-105">
+            <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
               Call Now
             </button>
           </a>
@@ -138,21 +132,23 @@ const Header = () => {
         {/* Mobile Menu */}
         <div
           ref={menuRef}
-          className={`fixed left-0 right-0 bg-blue-800 backdrop-blur-md transition-all duration-500 ease-in-out overflow-hidden md:hidden z-40 ${
+          className={`md:hidden fixed left-0 right-0 bg-blue-800 shadow-lg transition-all duration-300 ease-in-out overflow-hidden ${
             isMenuOpen
               ? "top-20 h-[calc(100vh-5rem)] opacity-100"
               : "top-[-100vh] h-0 opacity-0"
           }`}
         >
-          <div className="container mx-auto px-4 py-6 space-y-4">
-            {navLinks.map(({ path, label }) => (
+          <div className="container mx-auto px-4 py-4 space-y-4">
+            {navLinks.map((link) => (
               <Link
-                key={path}
-                to={path}
-                className="block text-white hover:text-yellow-300 px-2 py-3 text-lg border-b border-blue-700 transition-colors duration-300"
+                key={link.path}
+                to={link.path}
+                className={`block text-white hover:text-yellow-300 px-2 py-3 text-lg border-b border-blue-700 transition-colors duration-200 ${
+                  isActive(link.path) ? "text-yellow-300" : ""
+                }`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                {label}
+                {link.label}
               </Link>
             ))}
             <a
@@ -160,7 +156,7 @@ const Header = () => {
               className="block mt-6"
               onClick={() => setIsMenuOpen(false)}
             >
-              <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition-all duration-300 text-lg">
+              <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 text-lg">
                 Call Now
               </button>
             </a>

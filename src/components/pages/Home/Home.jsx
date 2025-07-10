@@ -1,12 +1,6 @@
 // src/pages/Home/Home.jsx
 import React from "react";
-import {
-  FaBus,
-  FaMapMarkedAlt,
-  FaHeadset,
-  FaStar,
-  FaRupeeSign,
-} from "react-icons/fa";
+import { FaBus, FaStar, FaRupeeSign } from "react-icons/fa";
 import { GiJourney } from "react-icons/gi";
 import { MdFamilyRestroom, MdSecurity } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
@@ -65,8 +59,8 @@ const Home = () => {
       <CallNow />
       <div className="overflow-hidden">
         {/* Hero Section */}
-        <section className=" bg-blue-900 text-white">
-          <div className="container mx-auto px-4 py-32 md:py-40">
+        <section className=" bg-blue-900 text-white h-[100%]">
+          <div className="container mx-auto px-4 py-40 md:py-40">
             <div className="max-w-2xl mx-auto text-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
                 Experience The Journey With{" "}
@@ -90,7 +84,6 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-gray-100 to-transparent"></div>
         </section>
 
         {/* Features Section */}

@@ -1,12 +1,6 @@
 // src/pages/About/About.jsx
 import React from "react";
-import {
-  FaBus,
-  FaUsers,
-  FaMapMarkedAlt,
-  FaAward,
-  FaPhoneAlt,
-} from "react-icons/fa";
+import { FaBus, FaUsers, FaAward, FaPhoneAlt } from "react-icons/fa";
 import { GiPathDistance } from "react-icons/gi";
 import { MdFamilyRestroom, MdSafetyCheck } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
