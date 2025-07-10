@@ -10,6 +10,7 @@ import {
 import { GiJourney } from "react-icons/gi";
 import { MdFamilyRestroom, MdSecurity } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
+import { Link } from "react-router-dom";
 const Home = () => {
   const featuredTours = [
     {
@@ -71,12 +72,17 @@ const Home = () => {
                 Premium travel services with comfort, safety and reliability
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                  Book Now
-                </button>
-                <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-                  Our Services
-                </button>
+                <Link to="/book">
+                  {" "}
+                  <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    Book Now
+                  </button>
+                </Link>
+                <Link to="/services">
+                  <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    Our Services
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

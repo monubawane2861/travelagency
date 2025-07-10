@@ -14,7 +14,8 @@ import AvailableCar from "./components/pages/AvailableCar/AvailableCar";
 import Contact from "./components/pages/Contact/Contact";
 import Review from "./components/pages/Review/Review";
 import CallNow from "./components/pages/callnowchatboot/CallNow";
-
+import Book from "./components/pages/book/Book";
+import Services from "./components/pages/services/Services";
 function App() {
   return (
     <Router>
@@ -29,6 +30,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/reviews" element={<Review />} />
             <Route path="/call" element={<CallNow />} />
+            <Route path="/book" element={<Book />} />
+            <Route path="/services" element={<Services />} />
           </Routes>
         </main>
 

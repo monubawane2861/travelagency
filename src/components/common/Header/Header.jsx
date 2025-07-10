@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const phoneNumber = "9226409449"; // Replace with your actual phone number
 
   return (
     <header className="bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg sticky top-0 z-50">
@@ -105,11 +106,11 @@ const Header = () => {
           </div>
 
           {/* Call Now Button (Desktop) */}
-          <Link to="/call" className="hidden md:block">
+          <a href={`tel:${phoneNumber}`} className="hidden md:block">
             <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300 transform hover:scale-105">
               Call Now
             </button>
-          </Link>
+          </a>
         </div>
 
         {/* Mobile Menu */}
@@ -145,11 +146,11 @@ const Header = () => {
             >
               Contact
             </Link>
-            <Link to="/call" className="block mt-4">
+            <a href={`tel:${phoneNumber}`} className="block mt-4">
               <button className="w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-6 rounded-full shadow-lg transition duration-300">
                 Call Now
               </button>
-            </Link>
+            </a>
           </div>
         )}
       </div>
