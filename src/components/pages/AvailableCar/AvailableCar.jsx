@@ -11,6 +11,8 @@ import {
 import { GiGearStickPattern } from "react-icons/gi";
 import { MdAirlineSeatReclineNormal, MdElectricCar } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 const AvailableCar = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchTerm, setSearchTerm] = useState("");
@@ -125,6 +127,7 @@ const AvailableCar = () => {
 
   return (
     <>
+      <Header />
       <CallNow />
       <div className="bg-gray-50 min-h-screen py-12">
         <div className="container mx-auto px-4">
@@ -257,6 +260,7 @@ const AvailableCar = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

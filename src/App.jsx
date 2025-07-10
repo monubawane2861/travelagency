@@ -1,12 +1,13 @@
 // src/App.jsx
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import "./App.css";
-
-// Import components
-import Header from "./components/common/Header/Header";
-import Footer from "./components/common/Footer/Footer";
-
+import { useEffect } from "react";
 // Import pages
 import Home from "./components/pages/Home/Home";
 import About from "./components/pages/About/About";
@@ -16,11 +17,21 @@ import Review from "./components/pages/Review/Review";
 import CallNow from "./components/pages/callnowchatboot/CallNow";
 import Book from "./components/pages/book/Book";
 import Services from "./components/pages/services/Services";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+  }, [pathname]);
+
+  return null;
+}
 function App() {
   return (
     <Router>
       <div className="app">
-        <Header />
+        <ScrollToTop />
 
         <main className="main-content">
           <Routes>
@@ -34,8 +45,6 @@ function App() {
             <Route path="/services" element={<Services />} />
           </Routes>
         </main>
-
-        <Footer />
       </div>
     </Router>
   );

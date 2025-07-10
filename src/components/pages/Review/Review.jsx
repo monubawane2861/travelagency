@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { FaStar, FaQuoteLeft, FaUserCircle } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import CallNow from "../callnowchatboot/CallNow";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 const Review = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -99,6 +101,7 @@ const Review = () => {
 
   return (
     <>
+      <Header />
       <CallNow />
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12">
         <div className="container mx-auto px-4">
@@ -332,6 +335,7 @@ const Review = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

@@ -12,6 +12,8 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import CallNow from "../callnowchatboot/CallNow";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -43,6 +45,7 @@ const Contact = () => {
 
   return (
     <>
+      <Header />
       <CallNow />
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
         {/* Hero Section */}
@@ -262,6 +265,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

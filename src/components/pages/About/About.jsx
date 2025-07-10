@@ -11,6 +11,8 @@ import { GiPathDistance } from "react-icons/gi";
 import { MdFamilyRestroom, MdSafetyCheck } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
 import { Link } from "react-router-dom";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 const About = () => {
   const stats = [
     {
@@ -58,6 +60,7 @@ const About = () => {
 
   return (
     <>
+      <Header />
       <CallNow />
       <div className="overflow-hidden">
         {/* Hero Section */}
@@ -258,6 +261,7 @@ const About = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };
