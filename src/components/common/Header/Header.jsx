@@ -1,5 +1,4 @@
-// src/components/common/Header/Header.jsx
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
@@ -8,13 +7,19 @@ const Header = () => {
   const location = useLocation();
   const menuRef = useRef(null);
 
+  // Close menu on route change
   useEffect(() => {
     setIsMenuOpen(false);
   }, [location]);
 
+  // Prevent scrolling when the mobile menu is open
   useEffect(() => {
-    document.body.style.overflow = isMenuOpen ? "hidden" : "";
-    return () => (document.body.style.overflow = "");
+    const originalStyle = window.getComputedStyle(document.body).overflow;
+    document.body.style.overflow = isMenuOpen ? "hidden" : originalStyle;
+
+    return () => {
+      document.body.style.overflow = originalStyle;
+    };
   }, [isMenuOpen]);
 
   const navLinks = [
@@ -25,7 +30,15 @@ const Header = () => {
     { path: "/contact", label: "Contact" },
   ];
 
-  const isActive = (path) => location.pathname === path;
+  // Memoize the isActive function
+  const isActive = useCallback(
+    (path) => location.pathname === path,
+    [location.pathname]
+  );
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   return (
     <header className="bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg sticky top-0 z-50 backdrop-blur-md transition-all duration-300">
@@ -77,9 +90,10 @@ const Header = () => {
               </button>
             </a>
             <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              onClick={toggleMenu}
               className="text-white transition-transform duration-300"
               aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? (
                 <svg
