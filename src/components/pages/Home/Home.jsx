@@ -4,8 +4,6 @@ import { GiJourney } from "react-icons/gi";
 import { MdFamilyRestroom, MdSecurity } from "react-icons/md";
 import { Link } from "react-router-dom";
 import CallNow from "../callnowchatboot/CallNow";
-import Header from "../../common/Header/Header";
-import Footer from "../../common/Footer/Footer";
 
 const Home = () => {
   const phoneNumber = "9226409449";
@@ -56,7 +54,6 @@ const Home = () => {
 
   return (
     <>
-      <Header />
       <CallNow />
       <div className="overflow-hidden">
         {/* Hero Section */}
@@ -181,7 +178,6 @@ const Home = () => {
           </div>
         </section>
       </div>
-      <Footer />
     </>
   );
 };

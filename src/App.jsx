@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
 } from "react-router-dom";
+
 import "./App.css";
-import { useEffect } from "react";
 
 import Home from "./components/pages/Home/Home";
 import About from "./components/pages/About/About";
@@ -18,20 +18,26 @@ import Book from "./components/pages/book/Book";
 import Services from "./components/pages/services/Services";
 import NotFound from "./components/pages/NotFound/NotFound";
 
+// Optional: If you have a common header/footer
+import Header from "./components/common/Header/Header";
+import Footer from "./components/common/Footer/Footer";
+
 function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "smooth" }); // Smooth scroll to top
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
 
   return null;
 }
+
 function App() {
   return (
     <Router>
       <div className="app">
         <ScrollToTop />
+        <Header />
 
         <main className="main-content">
           <Routes>
@@ -43,9 +49,11 @@ function App() {
             <Route path="/call" element={<CallNow />} />
             <Route path="/book" element={<Book />} />
             <Route path="/services" element={<Services />} />
-            <Route path="*" element={<NotFound />} />
+            <Route path="/*" element={<NotFound />} />
           </Routes>
         </main>
+
+        <Footer />
       </div>
     </Router>
   );
