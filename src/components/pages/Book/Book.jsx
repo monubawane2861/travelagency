@@ -9,8 +9,6 @@ import {
 } from "react-icons/fa";
 import { GiSteeringWheel } from "react-icons/gi";
 import { MdFamilyRestroom, MdPayment } from "react-icons/md";
-import Header from "../../common/Header/Header";
-import Footer from "../../common/Footer/Footer";
 
 const Book = () => {
   const [step, setStep] = useState(1);
