@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { FaStar, FaQuoteLeft, FaUserCircle } from "react-icons/fa";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import CallNow from "../callnowchatboot/CallNow";
-import Header from "../../common/Header/Header";
-import Footer from "../../common/Footer/Footer";
+import reviewData from "../../pages/Review/reviewData.json";
+
 const Review = () => {
   const [activeTab, setActiveTab] = useState("all");
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -15,62 +15,7 @@ const Review = () => {
   });
   const [hoverRating, setHoverRating] = useState(0);
 
-  const reviews = [
-    {
-      id: 1,
-      name: "Rajesh Kumar",
-      rating: 5,
-      date: "15 Jan 2023",
-      comment:
-        "Excellent service! The drivers were very professional and vehicles were super clean. Will definitely use Swami Nandan Tours again for our family trips.",
-      type: "family",
-    },
-    {
-      id: 2,
-      name: "Priya Sharma",
-      rating: 4,
-      date: "22 Feb 2023",
-      comment:
-        "Our pilgrimage trip was made comfortable thanks to Swami Nandan Tours. The vehicle was perfect for our group of 6.",
-      type: "pilgrimage",
-    },
-    {
-      id: 3,
-      name: "Amit Patel",
-      rating: 5,
-      date: "5 Mar 2023",
-      comment:
-        "Reliable and punctual service. The luxury car we booked was in pristine condition and the driver was very courteous.",
-      type: "luxury",
-    },
-    {
-      id: 4,
-      name: "Neha Gupta",
-      rating: 5,
-      date: "18 Apr 2023",
-      comment:
-        "Best travel experience ever! The team went above and beyond to accommodate our special requests. Highly recommended!",
-      type: "family",
-    },
-    {
-      id: 5,
-      name: "Vikram Singh",
-      rating: 4,
-      date: "30 May 2023",
-      comment:
-        "Good service at reasonable prices. The SUV was comfortable for our long journey to the hills.",
-      type: "adventure",
-    },
-    {
-      id: 6,
-      name: "Ananya Reddy",
-      rating: 5,
-      date: "12 Jun 2023",
-      comment:
-        "Impeccable service from booking to drop-off. The electric vehicle was a great eco-friendly option for city tours.",
-      type: "eco",
-    },
-  ];
+  const reviews = reviewData.reviews;
 
   const filteredReviews =
     activeTab === "all"
@@ -101,7 +46,6 @@ const Review = () => {
 
   return (
     <>
-      <Header />
       <CallNow />
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white py-12">
         <div className="container mx-auto px-4">
@@ -118,71 +62,24 @@ const Review = () => {
 
           {/* Review Filters */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <button
-              onClick={() => {
-                setActiveTab("all");
-                setCurrentSlide(0);
-              }}
-              className={`px-6 py-2 rounded-full transition-all ${
-                activeTab === "all"
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              All Reviews
-            </button>
-            <button
-              onClick={() => {
-                setActiveTab("family");
-                setCurrentSlide(0);
-              }}
-              className={`px-6 py-2 rounded-full transition-all ${
-                activeTab === "family"
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              Family Trips
-            </button>
-            <button
-              onClick={() => {
-                setActiveTab("pilgrimage");
-                setCurrentSlide(0);
-              }}
-              className={`px-6 py-2 rounded-full transition-all ${
-                activeTab === "pilgrimage"
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              Pilgrimage Tours
-            </button>
-            <button
-              onClick={() => {
-                setActiveTab("luxury");
-                setCurrentSlide(0);
-              }}
-              className={`px-6 py-2 rounded-full transition-all ${
-                activeTab === "luxury"
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              Luxury Travel
-            </button>
-            <button
-              onClick={() => {
-                setActiveTab("eco");
-                setCurrentSlide(0);
-              }}
-              className={`px-6 py-2 rounded-full transition-all ${
-                activeTab === "eco"
-                  ? "bg-blue-600 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-100"
-              }`}
-            >
-              Eco Tours
-            </button>
+            {["all", "family", "pilgrimage", "luxury", "eco"].map((type) => (
+              <button
+                key={type}
+                onClick={() => {
+                  setActiveTab(type);
+                  setCurrentSlide(0);
+                }}
+                className={`px-6 py-2 rounded-full transition-all ${
+                  activeTab === type
+                    ? "bg-blue-600 text-white"
+                    : "bg-white text-gray-700 hover:bg-gray-100"
+                }`}
+              >
+                {type === "all"
+                  ? "All Reviews"
+                  : type.charAt(0).toUpperCase() + type.slice(1) + " Trips"}
+              </button>
+            ))}
           </div>
 
           {/* Reviews Carousel */}
@@ -335,7 +232,6 @@ const Review = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

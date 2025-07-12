@@ -1,18 +1,11 @@
-// src/pages/Services/Services.jsx
 import React, { useState } from "react";
 import {
   FaBus,
   FaHotel,
   FaUmbrellaBeach,
-  FaMountain,
   FaPlaceOfWorship,
-  FaCarAlt,
-  FaPlane,
-  FaUser,
   FaPhone,
-  FaMapMarkedAlt,
-  FaHeadset,
-  FaStar,
+  FaUser,
 } from "react-icons/fa";
 import {
   GiIndiaGate,
@@ -21,110 +14,43 @@ import {
 } from "react-icons/gi";
 import { MdDirectionsCarFilled, MdTour } from "react-icons/md";
 import { IoMdTime } from "react-icons/io";
-import Header from "../../common/Header/Header";
-import Footer from "../../common/Footer/Footer";
+
 import CallNow from "../callnowchatboot/CallNow";
+import data from "../../pages/services/servicesData.json";
+
+// Icon mapper
+const iconMap = {
+  FaBus: <FaBus className="mr-2" />,
+  FaHotel: <FaHotel className="mr-2" />,
+  FaUmbrellaBeach: <FaUmbrellaBeach className="mr-2" />,
+  FaPlaceOfWorship: <FaPlaceOfWorship className="text-4xl text-green-600" />,
+  FaUser: <FaUser className="text-3xl text-yellow-600" />,
+  FaPhone: <FaPhone className="mr-2" />,
+  GiIndiaGate: <GiIndiaGate className="mr-2" />,
+  GiFamilyHouse: <GiFamilyHouse className="text-4xl text-pink-600" />,
+  GiCommercialAirplane: (
+    <GiCommercialAirplane className="text-4xl text-red-600" />
+  ),
+  MdTour: <MdTour className="mr-2" />,
+  MdDirectionsCarFilled: (
+    <MdDirectionsCarFilled className="text-4xl text-blue-600" />
+  ),
+  IoMdTime: <IoMdTime className="text-3xl text-blue-600" />,
+};
+
 const Services = () => {
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const categories = [
-    { id: "all", name: "All Services", icon: <MdTour className="mr-2" /> },
-    { id: "transport", name: "Transport", icon: <FaBus className="mr-2" /> },
-    { id: "tours", name: "Tours", icon: <GiIndiaGate className="mr-2" /> },
-    {
-      id: "accommodation",
-      name: "Accommodation",
-      icon: <FaHotel className="mr-2" />,
-    },
-    {
-      id: "special",
-      name: "Special",
-      icon: <FaUmbrellaBeach className="mr-2" />,
-    },
-  ];
-
-  const services = [
-    {
-      id: 1,
-      title: "Premium AC Transport",
-      category: "transport",
-      icon: <MdDirectionsCarFilled className="text-4xl text-blue-600" />,
-      description:
-        "Comfortable air-conditioned vehicles with professional drivers for all your travel needs",
-      features: [
-        "24/7 Availability",
-        "GPS Tracking",
-        "Multiple vehicle options",
-      ],
-      image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957",
-    },
-    {
-      id: 2,
-      title: "Golden Triangle Tour",
-      category: "tours",
-      icon: <GiIndiaGate className="text-4xl text-yellow-600" />,
-      description:
-        "Explore Delhi, Agra, and Jaipur with our expertly curated 5-day luxury package",
-      features: ["5 Star Hotels", "Private Guide", "All Meals Included"],
-      image: "https://images.unsplash.com/photo-1582972236019-ea9eab4b8965",
-    },
-    {
-      id: 3,
-      title: "Luxury Hotel Stays",
-      category: "accommodation",
-      icon: <FaHotel className="text-4xl text-purple-600" />,
-      description:
-        "Handpicked premium hotels and resorts with best-in-class amenities",
-      features: ["Central Locations", "Swimming Pool", "24/7 Room Service"],
-      image: "https://images.unsplash.com/photo-1566073771259-6a8506099945",
-    },
-    {
-      id: 4,
-      title: "Pilgrimage Packages",
-      category: "tours",
-      icon: <FaPlaceOfWorship className="text-4xl text-green-600" />,
-      description:
-        "Spiritual journeys to sacred sites with all arrangements taken care of",
-      features: ["Temple Visits", "Puja Arrangements", "Comfortable Travel"],
-      image: "https://images.unsplash.com/photo-1587474260584-136574528ed5",
-    },
-    {
-      id: 5,
-      title: "Airport Transfers",
-      category: "transport",
-      icon: <GiCommercialAirplane className="text-4xl text-red-600" />,
-      description:
-        "Hassle-free airport pickups and drops with flight monitoring",
-      features: ["Meet & Greet", "Flight Tracking", "Multiple vehicle options"],
-      image: "https://images.unsplash.com/photo-1436491865332-7a61a109cc05",
-    },
-    {
-      id: 6,
-      title: "Family Vacation Packages",
-      category: "special",
-      icon: <GiFamilyHouse className="text-4xl text-pink-600" />,
-      description: "Customized itineraries for memorable family vacations",
-      features: [
-        "Child-friendly Hotels",
-        "Flexible Scheduling",
-        "Entertainment Options",
-      ],
-      image: "https://images.unsplash.com/photo-1506929562872-bb421503ef21",
-    },
-  ];
-
   const filteredServices =
     activeCategory === "all"
-      ? services
-      : services.filter((service) => service.category === activeCategory);
+      ? data.services
+      : data.services.filter((service) => service.category === activeCategory);
 
   return (
     <>
-      <Header />
       <CallNow />
-
       <div className="min-h-screen bg-gray-50">
-        {/* Hero Section */}
+        {/* Hero */}
         <div className="relative bg-blue-900 text-white py-32">
           <div className="absolute inset-0 bg-black opacity-50"></div>
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1506929562872-bb421503ef21')] bg-cover bg-center"></div>
@@ -139,11 +65,11 @@ const Services = () => {
           </div>
         </div>
 
-        {/* Services Content */}
+        {/* Services */}
         <div className="container mx-auto px-4 py-16">
-          {/* Category Filters */}
+          {/* Filters */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
+            {data.categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
@@ -153,13 +79,13 @@ const Services = () => {
                     : "bg-white text-gray-700 hover:bg-gray-100 shadow-md"
                 }`}
               >
-                {category.icon}
+                {iconMap[category.icon]}
                 {category.name}
               </button>
             ))}
           </div>
 
-          {/* Services Grid */}
+          {/* Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredServices.map((service) => (
               <div
@@ -175,7 +101,7 @@ const Services = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70"></div>
                   <div className="absolute bottom-0 left-0 p-6">
                     <div className="bg-white p-3 rounded-full shadow-md">
-                      {service.icon}
+                      {iconMap[service.icon]}
                     </div>
                     <h3 className="text-xl font-bold text-white mt-3">
                       {service.title}
@@ -205,18 +131,17 @@ const Services = () => {
             ))}
           </div>
 
-          {/* Additional Services Section */}
+          {/* Why Us */}
           <div className="mt-24">
             <h2 className="text-3xl font-bold text-center mb-12">
               <span className="border-b-4 border-yellow-400 pb-2">
                 Why Choose Our Services?
               </span>
             </h2>
-
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition">
                 <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <IoMdTime className="text-3xl text-blue-600" />
+                  {iconMap["IoMdTime"]}
                 </div>
                 <h3 className="text-xl font-bold mb-3">24/7 Support</h3>
                 <p className="text-gray-600">
@@ -227,7 +152,7 @@ const Services = () => {
 
               <div className="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition">
                 <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <MdDirectionsCarFilled className="text-3xl text-green-600" />
+                  {iconMap["MdDirectionsCarFilled"]}
                 </div>
                 <h3 className="text-xl font-bold mb-3">
                   Well-Maintained Fleet
@@ -240,7 +165,7 @@ const Services = () => {
 
               <div className="bg-white p-8 rounded-xl shadow-md text-center hover:shadow-lg transition">
                 <div className="bg-yellow-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <FaUser className="text-3xl text-yellow-600" />
+                  {iconMap["FaUser"]}
                 </div>
                 <h3 className="text-xl font-bold mb-3">Expert Guides</h3>
                 <p className="text-gray-600">
@@ -261,7 +186,7 @@ const Services = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 flex items-center justify-center mx-auto">
-                <FaPhone className="mr-2" />
+                {iconMap["FaPhone"]}
                 Call +91 98765 43210
               </button>
               <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
@@ -271,7 +196,6 @@ const Services = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

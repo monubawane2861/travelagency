@@ -1,0 +1,102 @@
+{
+  "phoneNumber": "9226409449",
+  "heroSection": {
+    "heading": "Experience The Journey With",
+    "highlight": "SafarSaga Travels",
+    "subtext": "Premium travel services with comfort, safety and reliability",
+    "buttons": [
+      {
+        "label": "Book Now",
+        "link": "/book",
+        "type": "primary"
+      },
+      {
+        "label": "Our Services",
+        "link": "/services",
+        "type": "secondary"
+      }
+    ]
+  },
+  "features": [
+    {
+      "id": 1,
+      "title": "Modern Fleet",
+      "description": "Well-maintained, comfortable vehicles with all amenities",
+      "icon": "FaBus",
+      "color": "blue"
+    },
+    {
+      "id": 2,
+      "title": "Safe Travel",
+      "description": "Experienced drivers and 24/7 journey tracking",
+      "icon": "MdSecurity",
+      "color": "green"
+    },
+    {
+      "id": 3,
+      "title": "Best Prices",
+      "description": "Competitive rates with no hidden charges",
+      "icon": "FaRupeeSign",
+      "color": "yellow"
+    }
+  ],
+  "featuredTours": [
+    {
+      "id": 1,
+      "title": "Pilgrimage Special",
+      "description": "Visit sacred destinations with our spiritual tour packages",
+      "icon": "GiJourney",
+      "color": "blue"
+    },
+    {
+      "id": 2,
+      "title": "Family Packages",
+      "description": "Comfortable travel for your entire family",
+      "icon": "MdFamilyRestroom",
+      "color": "green"
+    },
+    {
+      "id": 3,
+      "title": "Luxury Tours",
+      "description": "Premium vehicles with all amenities",
+      "icon": "FaBus",
+      "color": "yellow"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Rajesh Kumar",
+      "comment": "Excellent service! The drivers were very professional and vehicles were super clean.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Priya Sharma",
+      "comment": "Our family trip was made comfortable thanks to safarsagatravel Tours.",
+      "rating": 4
+    },
+    {
+      "id": 3,
+      "name": "Amit Patel",
+      "comment": "Reliable and punctual service. Will definitely book again!",
+      "rating": 5
+    }
+  ],
+  "ctaSection": {
+    "heading": "Ready for Your Next Journey?",
+    "subtext": "Contact us today to book your comfortable and safe travel experience",
+    "buttons": [
+      {
+        "label": "Call Now",
+        "link": "tel:9226409449",
+        "type": "primary"
+      },
+      {
+        "label": "Get a Quote",
+        "link": "/about",
+        "type": "secondary"
+      }
+    ]
+  }
+}

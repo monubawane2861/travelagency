@@ -1,0 +1,52 @@
+{
+  "reviews": [
+    {
+      "id": 1,
+      "name": "Rajesh Kumar",
+      "rating": 5,
+      "date": "15 Jan 2023",
+      "comment": "Excellent service! The drivers were very professional and vehicles were super clean. Will definitely use Swami Nandan Tours again for our family trips.",
+      "type": "family"
+    },
+    {
+      "id": 2,
+      "name": "Priya Sharma",
+      "rating": 4,
+      "date": "22 Feb 2023",
+      "comment": "Our pilgrimage trip was made comfortable thanks to Swami Nandan Tours. The vehicle was perfect for our group of 6.",
+      "type": "pilgrimage"
+    },
+    {
+      "id": 3,
+      "name": "Amit Patel",
+      "rating": 5,
+      "date": "5 Mar 2023",
+      "comment": "Reliable and punctual service. The luxury car we booked was in pristine condition and the driver was very courteous.",
+      "type": "luxury"
+    },
+    {
+      "id": 4,
+      "name": "Neha Gupta",
+      "rating": 5,
+      "date": "18 Apr 2023",
+      "comment": "Best travel experience ever! The team went above and beyond to accommodate our special requests. Highly recommended!",
+      "type": "family"
+    },
+    {
+      "id": 5,
+      "name": "Vikram Singh",
+      "rating": 4,
+      "date": "30 May 2023",
+      "comment": "Good service at reasonable prices. The SUV was comfortable for our long journey to the hills.",
+      "type": "adventure"
+    },
+    {
+      "id": 6,
+      "name": "Ananya Reddy",
+      "rating": 5,
+      "date": "12 Jun 2023",
+      "comment": "Impeccable service from booking to drop-off. The electric vehicle was a great eco-friendly option for city tours.",
+      "type": "eco"
+    }
+  ]
+}

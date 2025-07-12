@@ -1,56 +1,29 @@
 import React from "react";
-import { FaBus, FaStar, FaRupeeSign } from "react-icons/fa";
-import { GiJourney } from "react-icons/gi";
-import { MdFamilyRestroom, MdSecurity } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { FaBus, FaRupeeSign, FaStar } from "react-icons/fa";
+import { GiJourney } from "react-icons/gi";
+import { MdSecurity, MdFamilyRestroom } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
+import homeData from "../../pages/Home/homeData.json";
+
+// Icon mapping
+const iconMap = {
+  FaBus: <FaBus className="text-4xl text-blue-600" />,
+  MdSecurity: <MdSecurity className="text-4xl text-green-600" />,
+  FaRupeeSign: <FaRupeeSign className="text-4xl text-yellow-600" />,
+  GiJourney: <GiJourney className="text-4xl text-blue-600" />,
+  MdFamilyRestroom: <MdFamilyRestroom className="text-4xl text-green-600" />,
+};
 
 const Home = () => {
-  const phoneNumber = "9226409449";
-
-  const featuredTours = [
-    {
-      id: 1,
-      title: "Pilgrimage Special",
-      description: "Visit sacred destinations with our spiritual tour packages",
-      icon: <GiJourney className="text-4xl text-blue-600" />,
-    },
-    {
-      id: 2,
-      title: "Family Packages",
-      description: "Comfortable travel for your entire family",
-      icon: <MdFamilyRestroom className="text-4xl text-green-600" />,
-    },
-    {
-      id: 3,
-      title: "Luxury Tours",
-      description: "Premium vehicles with all amenities",
-      icon: <FaBus className="text-4xl text-yellow-600" />,
-    },
-  ];
-
-  const testimonials = [
-    {
-      id: 1,
-      name: "Rajesh Kumar",
-      comment:
-        "Excellent service! The drivers were very professional and vehicles were super clean.",
-      rating: 5,
-    },
-    {
-      id: 2,
-      name: "Priya Sharma",
-      comment:
-        "Our family trip was made comfortable thanks to safarsagatravel Tours.",
-      rating: 4,
-    },
-    {
-      id: 3,
-      name: "Amit Patel",
-      comment: "Reliable and punctual service. Will definitely book again!",
-      rating: 5,
-    },
-  ];
+  const {
+    phoneNumber,
+    heroSection,
+    features,
+    featuredTours,
+    testimonials,
+    ctaSection,
+  } = homeData;
 
   return (
     <>
@@ -58,123 +31,97 @@ const Home = () => {
       <div className="overflow-hidden">
         {/* Hero Section */}
         <section className="bg-blue-900 text-white h-[100%]">
-          <div className="container mx-auto px-4 py-40">
-            <div className="max-w-2xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                Experience The Journey With{" "}
-                <span className="text-yellow-400">SafarSaga Travels</span>
-              </h1>
-              <p className="text-xl mb-8">
-                Premium travel services with comfort, safety and reliability
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link to="/book">
-                  <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                    Book Now
-                  </button>
-                </Link>
-                <Link to="/services">
-                  <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-                    Our Services
-                  </button>
-                </Link>
-              </div>
+          <div className="container mx-auto px-4 py-40 text-center">
+            <h1 className="text-4xl md:text-5xl font-bold mb-6">
+              {heroSection.heading}{" "}
+              <span className="text-yellow-400">{heroSection.highlight}</span>
+            </h1>
+            <p className="text-xl mb-8">{heroSection.subtext}</p>
+            <div className="flex flex-col sm:flex-row justify-center gap-4">
+              {heroSection.buttons.map((btn, idx) =>
+                btn.type === "primary" ? (
+                  <Link to={btn.link} key={idx}>
+                    <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                      {btn.label}
+                    </button>
+                  </Link>
+                ) : (
+                  <Link to={btn.link} key={idx}>
+                    <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                      {btn.label}
+                    </button>
+                  </Link>
+                )
+              )}
             </div>
           </div>
         </section>
 
-        {/* Features Section */}
+        {/* Features */}
         <section className="py-16 bg-gray-100">
-          <div className="container mx-auto px-4">
-            <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-2">
-                Why Choose Us
-              </h2>
-              <div className="w-20 h-1 bg-yellow-500 mx-auto"></div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <SectionHeader title="Why Choose Us" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto px-4">
+            {features.map((feature) => (
               <FeatureCard
-                icon={<FaBus className="text-4xl text-blue-600" />}
-                title="Modern Fleet"
-                description="Well-maintained, comfortable vehicles with all amenities"
+                key={feature.id}
+                icon={iconMap[feature.icon]}
+                title={feature.title}
+                description={feature.description}
               />
-              <FeatureCard
-                icon={<MdSecurity className="text-4xl text-green-600" />}
-                title="Safe Travel"
-                description="Experienced drivers and 24/7 journey tracking"
-              />
-              <FeatureCard
-                icon={<FaRupeeSign className="text-4xl text-yellow-600" />}
-                title="Best Prices"
-                description="Competitive rates with no hidden charges"
-              />
-            </div>
+            ))}
           </div>
         </section>
 
         {/* Featured Tours */}
         <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <SectionHeader
-              title="Our Special Tours"
-              dividerClass="bg-yellow-500"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {featuredTours.map((tour) => (
-                <TourCard
-                  key={tour.id}
-                  icon={tour.icon}
-                  title={tour.title}
-                  description={tour.description}
-                />
-              ))}
-            </div>
+          <SectionHeader title="Our Special Tours" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto px-4">
+            {featuredTours.map((tour) => (
+              <TourCard
+                key={tour.id}
+                icon={iconMap[tour.icon]}
+                title={tour.title}
+                description={tour.description}
+              />
+            ))}
           </div>
         </section>
 
         {/* Testimonials */}
         <section className="py-16 bg-blue-50">
-          <div className="container mx-auto px-4">
-            <SectionHeader
-              title="What Our Customers Say"
-              dividerClass="bg-yellow-500"
-            />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((testimonial) => (
-                <TestimonialCard
-                  key={testimonial.id}
-                  rating={testimonial.rating}
-                  comment={testimonial.comment}
-                  name={testimonial.name}
-                />
-              ))}
-            </div>
+          <SectionHeader title="What Our Customers Say" />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 container mx-auto px-4">
+            {testimonials.map((item) => (
+              <TestimonialCard
+                key={item.id}
+                rating={item.rating}
+                comment={item.comment}
+                name={item.name}
+              />
+            ))}
           </div>
         </section>
 
-        {/* Call to Action */}
-        <section className="py-16 bg-blue-900 text-white">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl font-bold mb-4">
-              Ready for Your Next Journey?
-            </h2>
-            <p className="text-xl mb-6 max-w-2xl mx-auto">
-              Contact us today to book your comfortable and safe travel
-              experience
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <a href={`tel:${phoneNumber}`}>
-                <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
-                  Call Now
-                </button>
-              </a>
-              <Link to="/about">
-                <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
-                  Get a Quote
-                </button>
-              </Link>
-            </div>
+        {/* Call To Action */}
+        <section className="py-16 bg-blue-900 text-white text-center">
+          <h2 className="text-3xl font-bold mb-4">{ctaSection.heading}</h2>
+          <p className="text-xl mb-6 max-w-2xl mx-auto">{ctaSection.subtext}</p>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            {ctaSection.buttons.map((btn, idx) =>
+              btn.type === "primary" ? (
+                <a href={btn.link} key={idx}>
+                  <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                    {btn.label}
+                  </button>
+                </a>
+              ) : (
+                <Link to={btn.link} key={idx}>
+                  <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold py-3 px-8 rounded-full transition duration-300">
+                    {btn.label}
+                  </button>
+                </Link>
+              )
+            )}
           </div>
         </section>
       </div>
@@ -214,10 +161,10 @@ const TestimonialCard = ({ rating, comment, name }) => (
   </div>
 );
 
-const SectionHeader = ({ title, dividerClass }) => (
+const SectionHeader = ({ title }) => (
   <div className="text-center mb-8">
     <h2 className="text-3xl font-bold text-gray-800 mb-2">{title}</h2>
-    <div className={`w-20 h-1 ${dividerClass} mx-auto`}></div>
+    <div className="w-20 h-1 bg-yellow-500 mx-auto"></div>
   </div>
 );
 

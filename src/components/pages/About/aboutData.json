@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "title": "About SafarSaga Travel",
+    "subtitle": "Your trusted travel partner since 2010"
+  },
+  "story": {
+    "image": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    "heading": "Our Journey",
+    "paragraphs": [
+      "Founded in 2010 by Rajesh Nandan, SafarSaga Travel began with just 2 vehicles and a vision to provide exceptional travel experiences. Today, we're one of the most trusted travel agencies in the region.",
+      "What started as a small family business has grown into a fleet of 50+ vehicles serving thousands of satisfied customers annually. Our commitment to safety, comfort, and reliability has remained unchanged since day one."
+    ],
+    "phone": "+91 98765 43210"
+  },
+  "stats": [
+    {
+      "value": "12+",
+      "label": "Years Experience",
+      "icon": "FaAward",
+      "color": "text-yellow-500"
+    },
+    {
+      "value": "50+",
+      "label": "Vehicles",
+      "icon": "FaBus",
+      "color": "text-blue-500"
+    },
+    {
+      "value": "10K+",
+      "label": "Happy Customers",
+      "icon": "FaUsers",
+      "color": "text-green-500"
+    },
+    {
+      "value": "500K+",
+      "label": "Kilometers Covered",
+      "icon": "GiPathDistance",
+      "color": "text-red-500"
+    }
+  ],
+  "values": [
+    {
+      "title": "Safety First",
+      "description": "All our vehicles undergo regular maintenance and our drivers are trained in defensive driving techniques.",
+      "icon": "MdSafetyCheck",
+      "borderColor": "border-blue-500"
+    },
+    {
+      "title": "Customer Focus",
+      "description": "Your satisfaction is our priority. We go the extra mile to ensure comfortable and memorable journeys.",
+      "icon": "FaUsers",
+      "borderColor": "border-green-500"
+    },
+    {
+      "title": "Family Values",
+      "description": "As a family-run business, we treat every customer like part of our extended family.",
+      "icon": "MdFamilyRestroom",
+      "borderColor": "border-yellow-500"
+    }
+  ],
+  "team": [
+    {
+      "name": "Rajesh Nandan",
+      "role": "Founder & CEO",
+      "bio": "With over 15 years in the travel industry, Rajesh ensures our services meet the highest standards.",
+      "image": "https://randomuser.me/api/portraits/men/32.jpg"
+    },
+    {
+      "name": "Priya Sharma",
+      "role": "Operations Manager",
+      "bio": "Coordinates all tours and ensures seamless travel experiences for our clients.",
+      "image": "https://randomuser.me/api/portraits/women/44.jpg"
+    },
+    {
+      "name": "Amit Patel",
+      "role": "Head Driver",
+      "bio": "Our most experienced driver with 10+ years of accident-free driving.",
+      "image": "https://randomuser.me/api/portraits/men/75.jpg"
+    }
+  ]
+}
