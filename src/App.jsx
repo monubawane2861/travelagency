@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 import "./App.css";
 
-import Home from "./components/pages/Home/Home";
+import Home from "././components/pages/Home/Home";
 import About from "./components/pages/About/About";
 import AvailableCar from "./components/pages/AvailableCar/AvailableCar";
 import Contact from "./components/pages/Contact/Contact";
@@ -34,28 +29,26 @@ function ScrollToTop() {
 
 function App() {
   return (
-    <Router>
-      <div className="app">
-        <ScrollToTop />
-        <Header />
+    <div className="app">
+      <ScrollToTop />
+      <Header />
 
-        <main className="main-content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/cars" element={<AvailableCar />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/reviews" element={<Review />} />
-            <Route path="/call" element={<CallNow />} />
-            <Route path="/book" element={<Book />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/*" element={<NotFound />} />
-          </Routes>
-        </main>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/cars" element={<AvailableCar />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/reviews" element={<Review />} />
+          <Route path="/call" element={<CallNow />} />
+          <Route path="/book" element={<Book />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </main>
 
-        <Footer />
-      </div>
-    </Router>
+      <Footer />
+    </div>
   );
 }
 
