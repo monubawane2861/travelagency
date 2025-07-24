@@ -31,15 +31,19 @@ const Contact = () => {
     <>
       <Header />
       <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-        <div className="bg-blue-900 text-white py-16 text-center">
-          <h1 className="text-4xl font-bold mb-2">Contact Us</h1>
-          <p className="text-lg">Connect with our travel experts</p>
+        {/* Header */}
+        <div className="bg-blue-900 text-white py-12 md:py-16 text-center px-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-2">Contact Us</h1>
+          <p className="text-base md:text-lg">
+            Connect with our travel experts
+          </p>
         </div>
 
-        <div className="container mx-auto px-4 py-12 grid lg:grid-cols-2 gap-10">
-          {/* Form Section */}
-          <div className="bg-white rounded-xl shadow-md p-6">
-            <h2 className="text-xl font-bold mb-6 text-gray-800">
+        {/* Main Section */}
+        <div className="container mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+          {/* Contact Form */}
+          <div className="bg-white rounded-xl shadow-md p-6 md:p-8">
+            <h2 className="text-xl font-semibold text-gray-800 mb-6">
               Get In Touch
             </h2>
             <div className="space-y-4">
@@ -57,7 +61,7 @@ const Contact = () => {
                 placeholder="Your Email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300  rounded-lg outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none"
               />
               <input
                 type="tel"
@@ -65,7 +69,7 @@ const Contact = () => {
                 placeholder="Phone Number"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300  rounded-lg outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none"
               />
               <input
                 type="text"
@@ -73,7 +77,7 @@ const Contact = () => {
                 placeholder="Subject"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300  rounded-lg outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none"
               />
               <textarea
                 name="message"
@@ -81,11 +85,11 @@ const Contact = () => {
                 placeholder="Message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300  rounded-lg outline-none"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg outline-none"
               ></textarea>
 
               {/* WhatsApp & Email Buttons */}
-              <div className="flex gap-4 pt-4">
+              <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
                   href={`https://wa.me/917264078250?text=Hello, I want to know more about your travel services.`}
                   target="_blank"
@@ -106,38 +110,38 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-blue-500">
+            <div className="bg-white p-5 md:p-6 rounded-xl shadow-md border-l-4 border-blue-500">
               <div className="flex items-center mb-2">
                 <FaPhone className="text-blue-500 mr-3" />
-                <h3 className="font-bold text-lg">Phone</h3>
+                <h3 className="font-semibold text-lg">Phone</h3>
               </div>
               <p>+91 9022979253</p>
               <p>+91 9579297434</p>
               <p className="text-blue-600 mt-1">24/7 Support</p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-green-500">
+            <div className="bg-white p-5 md:p-6 rounded-xl shadow-md border-l-4 border-green-500">
               <div className="flex items-center mb-2">
                 <FaEnvelope className="text-green-600 mr-3" />
-                <h3 className="font-bold text-lg">Email</h3>
+                <h3 className="font-semibold text-lg">Email</h3>
               </div>
               <p>info@safarsagatravel.com</p>
               <p>bookings@safarsagatravel.com</p>
               <p className="text-green-600 mt-1">Response within 24 hours</p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-yellow-500">
+            <div className="bg-white p-5 md:p-6 rounded-xl shadow-md border-l-4 border-yellow-500">
               <div className="flex items-center mb-2">
                 <FaMapMarkerAlt className="text-yellow-600 mr-3" />
-                <h3 className="font-bold text-lg">Location</h3>
+                <h3 className="font-semibold text-lg">Location</h3>
               </div>
               <p>Ojhar, Taluka Nifad, District Nashik</p>
             </div>
 
-            <div className="bg-white p-6 rounded-xl shadow-md border-l-4 border-red-500">
+            <div className="bg-white p-5 md:p-6 rounded-xl shadow-md border-l-4 border-red-500">
               <div className="flex items-center mb-2">
                 <FaClock className="text-red-600 mr-3" />
-                <h3 className="font-bold text-lg">Working Hours</h3>
+                <h3 className="font-semibold text-lg">Working Hours</h3>
               </div>
               <p>Mon - Sat: 8AM - 8PM</p>
               <p>Sunday: 10AM - 4PM</p>
