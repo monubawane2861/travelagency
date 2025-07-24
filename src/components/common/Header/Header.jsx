@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const phoneNumber = "9226409449";
+  const phoneNumber = "9022979253"; // Replace with your actual phone number
   const location = useLocation();
   const menuRef = useRef(null);
 
