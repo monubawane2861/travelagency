@@ -1,7 +1,6 @@
 {
   "vehicleTypes": [
     { "id": "all", "name": "All Vehicles", "icon": "FaCar" },
-    { "id": "suv", "name": "SUV", "icon": "FaCar" },
     { "id": "sedan", "name": "Sedan", "icon": "FaCar" },
     { "id": "luxury", "name": "Luxury", "icon": "FaCar" },
     { "id": "electric", "name": "Electric", "icon": "MdElectricCar" }
@@ -9,9 +8,9 @@
   "vehicles": [
     {
       "id": 1,
-      "name": "Toyota Innova Crysta",
+      "name": "Mahendra tourist bus",
       "type": "suv",
-      "seats": 7,
+     
       "ac": true,
       "transmission": "Automatic",
       "fuel": "Diesel",
@@ -22,12 +21,12 @@
     },
     {
       "id": 2,
-      "name": "Hyundai Creta",
+      "name": "",
       "type": "suv",
-      "seats": 5,
+      
       "ac": true,
       "transmission": "Manual",
-      "fuel": "Petrol",
+      "fuel": "Diesel",
       "rating": 4.2,
    
       "image": "https://www.mahindratruckandbus.com/English/images/buses/cruzio-grande/cruzio-grande-staff/overview-1.jpg",
@@ -35,12 +34,12 @@
     },
     {
       "id": 3,
-      "name": "Mercedes-Benz E-Class",
+      "name": "Mahendra vehicle",
       "type": "luxury",
-      "seats": 4,
+    
       "ac": true,
       "transmission": "Automatic",
-      "fuel": "Petrol",
+      "fuel": "Diesel",
       "rating": 4.8,
    
       "image": "https://content.jdmagicbox.com/quickquotes/images_main/mahindra-commercial-vehicle-20-01-2021-029-220034074-a8thz.jpg?impolicy=queryparam&im=Resize=(360,360),aspect=fit",
@@ -48,12 +47,12 @@
     },
     {
       "id": 4,
-      "name": "Tata Nexon EV",
+      "name": " Mahendra bus",
       "type": "electric",
       "seats": 5,
       "ac": true,
       "transmission": "Automatic",
-      "fuel": "Electric",
+      "fuel": "Diesel",
       "rating": 4.3,
     
       "image": "https://4.imimg.com/data4/GP/DI/MY-28200912/mahindra-bus-15-to-55-seater-500x500.jpg",
@@ -61,12 +60,12 @@
     },
     {
       "id": 5,
-      "name": "Honda City",
+      "name": "Mahendra wan bus",
       "type": "sedan",
-      "seats": 5,
+      
       "ac": true,
       "transmission": "Manual",
-      "fuel": "Petrol",
+      "fuel": "Diesel",
       "rating": 4.1,
    
       "image": "https://5.imimg.com/data5/JT/CH/GLADMIN-24911211/mahindra-supro-school-van-500x500.png",
@@ -74,7 +73,7 @@
     },
     {
       "id": 6,
-      "name": "BMW 5 Series",
+      "name": "Mahendra luxury Bus",
       "type": "luxury",
       "seats": 4,
       "ac": true,

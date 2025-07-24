@@ -11,8 +11,8 @@
         "type": "primary"
       },
       {
-        "label": "Our Services",
-        "link": "/services",
+        "label": "About Us",
+        "link": "/about",
         "type": "secondary"
       }
     ]

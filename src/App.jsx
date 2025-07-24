@@ -10,12 +10,10 @@ import Contact from "./components/pages/Contact/Contact";
 import Review from "./components/pages/Review/Review";
 import CallNow from "./components/pages/callnowchatboot/CallNow";
 // import Book from "./components/pages/Book/Book";
-import Services from "./components/pages/services/Services";
+// import Services from "./components/pages/services/Services";
 import NotFound from "./components/pages/NotFound/NotFound";
 
 // Optional: If you have a common header/footer
-import Header from "./components/common/Header/Header";
-import Footer from "./components/common/Footer/Footer";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -31,7 +29,6 @@ function App() {
   return (
     <div className="app">
       <ScrollToTop />
-      <Header />
 
       <main className="main-content">
         <Routes>
@@ -42,12 +39,10 @@ function App() {
           <Route path="/reviews" element={<Review />} />
           <Route path="/call" element={<CallNow />} />
           {/* <Route path="/book" element={<Book />} /> */}
-          <Route path="/services" element={<Services />} />
+          {/* <Route path="/services" element={<Services />} /> */}
           <Route path="/*" element={<NotFound />} />
         </Routes>
       </main>
-
-      <Footer />
     </div>
   );
 }

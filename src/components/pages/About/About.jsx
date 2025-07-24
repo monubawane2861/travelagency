@@ -5,7 +5,8 @@ import { MdFamilyRestroom, MdSafetyCheck } from "react-icons/md";
 import { Link } from "react-router-dom";
 import CallNow from "../callnowchatboot/CallNow";
 import aboutData from "../../pages/About/aboutData.json";
-
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 // Icon mapping
 const iconMap = {
   FaBus: <FaBus className="text-3xl" />,
@@ -21,6 +22,7 @@ const About = () => {
 
   return (
     <>
+      <Header />
       <CallNow />
       <div className="overflow-hidden">
         {/* Hero Section */}
@@ -168,6 +170,7 @@ const About = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

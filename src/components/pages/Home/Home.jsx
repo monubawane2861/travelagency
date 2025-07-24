@@ -5,7 +5,8 @@ import { GiJourney } from "react-icons/gi";
 import { MdSecurity, MdFamilyRestroom } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
 import homeData from "../../pages/Home/homeData.json";
-
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 // Icon mapping
 const iconMap = {
   FaBus: <FaBus className="text-4xl text-blue-600" />,
@@ -27,6 +28,7 @@ const Home = () => {
 
   return (
     <>
+      <Header />
       <CallNow />
       <div className="overflow-hidden">
         {/* Hero Section */}
@@ -125,6 +127,7 @@ const Home = () => {
           </div>
         </section>
       </div>
+      <Footer />
     </>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import saikrupaLogo from "../../../assets/image/saikrupa logo.png"; // Make sure the image is in src/assets/
+import saikrupaaLogo from "../../../assets/image/saikrupa logo.png"; // Make sure the image is in src/assets/
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -42,7 +42,7 @@ const Header = () => {
           {/* ✅ Logo with Image */}
           <Link to="/" className="flex items-center space-x-3">
             <img
-              src={saikrupaLogo}
+              src={saikrupaaLogo}
               alt="Sai Krupa Logo"
               className="h-16 w-auto object-contain"
             />

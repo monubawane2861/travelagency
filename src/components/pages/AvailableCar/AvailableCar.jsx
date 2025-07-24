@@ -11,7 +11,9 @@ import { GiGearStickPattern } from "react-icons/gi";
 import { MdAirlineSeatReclineNormal, MdElectricCar } from "react-icons/md";
 import CallNow from "../callnowchatboot/CallNow";
 import data from "../../pages/AvailableCar/availableCarData.json"; // Adjust path if needed
-
+import { Link } from "react-router-dom";
+import Header from "../../common/Header/Header";
+import Footer from "../../common/Footer/Footer";
 const iconMap = {
   FaCar: <FaCar className="mr-2" />,
   MdElectricCar: <MdElectricCar className="mr-2" />,
@@ -35,6 +37,7 @@ const AvailableCar = () => {
 
   return (
     <>
+      <Header />
       <CallNow />
       <div className="bg-gray-50 min-h-screen py-12">
         <div className="container mx-auto px-4">
@@ -134,9 +137,11 @@ const AvailableCar = () => {
                           Starting from
                         </span>
                       </div>
-                      <button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full transition duration-300">
-                        Book Now
-                      </button>
+                      <Link to="/contact">
+                        <button className="bg-blue-900 cursor-pointer hover:bg-blue-800 text-white px-6 py-2 rounded-full transition duration-300">
+                          Book Now
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -160,6 +165,7 @@ const AvailableCar = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
