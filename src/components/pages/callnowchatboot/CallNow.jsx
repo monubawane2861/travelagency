@@ -93,7 +93,7 @@ const CallNow = () => {
                   <p className="text-sm">Get quick responses via WhatsApp</p>
                 </div>
                 <a
-                  href="https://wa.me/+91 8530335944"
+                  href="https://wa.me/+91 7264078250"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg mb-3 transition duration-300"
