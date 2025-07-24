@@ -1,9 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
+import saikrupaLogo from "../../../assets/image/saikrupa logo.png"; // Make sure the image is in src/assets/
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const phoneNumber = "9022979253"; // Replace with your actual phone number
+  const phoneNumber = "9022979253";
   const location = useLocation();
   const menuRef = useRef(null);
 
@@ -38,27 +39,13 @@ const Header = () => {
     <header className="bg-gradient-to-r from-blue-800 to-blue-600 shadow-lg sticky top-0 z-50">
       <div className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-8 w-8 text-blue-600"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 10V3L4 14h7v7l9-11h-7z"
-                />
-              </svg>
-            </div>
-            <span className="text-white text-2xl font-bold font-serif">
-              SaiKrupa Travels
-            </span>
+          {/* ✅ Logo with Image */}
+          <Link to="/" className="flex items-center space-x-3">
+            <img
+              src={saikrupaLogo}
+              alt="Sai Krupa Logo"
+              className="h-16 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -76,7 +63,7 @@ const Header = () => {
             ))}
           </nav>
 
-          {/* Mobile menu button */}
+          {/* Mobile Menu Toggle */}
           <div className="md:hidden flex items-center">
             <a href={`tel:${phoneNumber}`} className="mr-4">
               <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded-full shadow-lg transition duration-300">
