@@ -11,6 +11,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { MdDirectionsBus } from "react-icons/md";
+import saikrupaaLogo from "../../../assets/image/logo.png"; // Make sure the image is in src/assets/
 
 const Footer = () => {
   return (
@@ -19,10 +20,13 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Company */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <MdDirectionsBus className="text-yellow-400 text-3xl" />
-              <h3 className="text-2xl font-bold font-serif">Saikrupa Travel</h3>
-            </div>
+            <Link to="/" className="flex items-center space-x-3">
+              <img
+                src={saikrupaaLogo}
+                alt="Sai Krupa Logo"
+                className="h-16 w-auto object-contain"
+              />
+            </Link>
             <p className="text-gray-300">
               Providing premium travel experiences since 2010. Your journey is
               our priority with comfort, safety and reliability.

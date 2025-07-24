@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import saikrupaaLogo from "../../../assets/image/saikrupa logo.png"; // Make sure the image is in src/assets/
+import saikrupaaLogo from "../../../assets/image/logo.png"; // Make sure the image is in src/assets/
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
