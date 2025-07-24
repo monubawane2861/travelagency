@@ -133,12 +133,6 @@ const AvailableCar = () => {
                         <span className="text-gray-500 text-sm">
                           Starting from
                         </span>
-                        <p className="text-2xl font-bold text-blue-900">
-                          ₹{vehicle.price}
-                          <span className="text-sm font-normal text-gray-500">
-                            /day
-                          </span>
-                        </p>
                       </div>
                       <button className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-full transition duration-300">
                         Book Now

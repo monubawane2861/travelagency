@@ -21,9 +21,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <MdDirectionsBus className="text-yellow-400 text-3xl" />
-              <h3 className="text-2xl font-bold font-serif">
-                SafarSaga Travel
-              </h3>
+              <h3 className="text-2xl font-bold font-serif">Saikrupa Travel</h3>
             </div>
             <p className="text-gray-300">
               Providing premium travel experiences since 2010. Your journey is
@@ -115,18 +113,26 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <FaPhone className="text-yellow-400 mt-1" />
                 <div>
-                  <p className="text-gray-300">+91 98765 43210</p>
-                  <p className="text-gray-300">+91 98765 43211</p>
+                  <p className="text-gray-300">+91 9022979253</p>
+                  <p className="text-gray-300">+91 8530335944</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
+                <FaPhone className="text-yellow-400 mt-1" />
+                <div>
+                  <p className="text-gray-300">+91 7264078250</p>
+                  <p className="text-gray-300">+91 9579297434</p>
+                </div>
+              </div>
+              {/* 
+              <div className="flex items-start space-x-3">
                 <FaEnvelope className="text-yellow-400 mt-1" />
                 <p className="text-gray-300">info@safarsagtravel.com</p>
-              </div>
+              </div> */}
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-yellow-400 mt-1" />
                 <p className="text-gray-300">
-                  123 Travel Street, Tourist City, India - 123456
+                  Ojhan taluka Nifad, district Nashik
                 </p>
               </div>
             </div>
@@ -160,7 +166,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} safarsaga travel. All Rights
+            &copy; {new Date().getFullYear()} Saikrupa travel. All Rights
             Reserved.
           </p>
           <p className="mt-1 text-sm">Designed with ❤️ for travelers</p>

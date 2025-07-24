@@ -151,10 +151,10 @@ const About = () => {
               Ready to Travel With Us?
             </h2>
             <p className="text-xl mb-8 max-w-2xl mx-auto">
-              Experience the SafarSaga Travel difference for your next journey
+              Experience the Saikrupa Travel difference for your next journey
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <Link to="/book">
+              <Link to="/contact">
                 <button className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
                   Book Your Trip
                 </button>

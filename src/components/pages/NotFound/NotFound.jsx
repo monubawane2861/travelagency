@@ -72,7 +72,7 @@ const NotFound = () => {
             </svg>
           </div>
           <span className="text-xl font-bold text-blue-600">
-            SafarSaga Travels
+            Saikrupa Travels
           </span>
         </Link>
       </div>

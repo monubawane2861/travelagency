@@ -162,8 +162,8 @@ const Contact = () => {
                     </div>
                     <h3 className="font-bold text-lg">Phone</h3>
                   </div>
-                  <p className="text-gray-600">+91 98765 43210</p>
-                  <p className="text-gray-600">+91 98765 43211</p>
+                  <p className="text-gray-600">+91 9022979253</p>
+                  <p className="text-gray-600">+91 9579297434</p>
                   <p className="text-blue-600 font-medium mt-2">24/7 Support</p>
                 </div>
 
@@ -186,10 +186,10 @@ const Contact = () => {
                     <div className="bg-yellow-100 p-3 rounded-full mr-4 text-yellow-600">
                       <FaMapMarkerAlt />
                     </div>
-                    <h3 className="font-bold text-lg">Office</h3>
+                    <h3 className="font-bold text-lg">Location</h3>
                   </div>
-                  <p className="text-gray-600">123 Travel Street</p>
-                  <p className="text-gray-600">Tourist City, India - 123456</p>
+                  <p className="text-gray-600">Ojhar</p>
+                  <p className="text-gray-600">Taluka Nifad District Nashik</p>
                   <p className="text-yellow-600 font-medium mt-2">
                     Get Directions
                   </p>

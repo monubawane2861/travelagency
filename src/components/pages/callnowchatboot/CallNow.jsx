@@ -76,10 +76,10 @@ const CallNow = () => {
                   </p>
                 </div>
                 <a
-                  href="tel:+919876543210"
+                  href="tel:9579297434"
                   className="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg mb-3 transition duration-300"
                 >
-                  Call +91 98765 43210
+                  Call 9579297434
                 </a>
                 <p className="text-xs text-gray-500">
                   Standard calling rates apply
@@ -93,7 +93,7 @@ const CallNow = () => {
                   <p className="text-sm">Get quick responses via WhatsApp</p>
                 </div>
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/+91 8530335944"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg mb-3 transition duration-300"
@@ -109,7 +109,7 @@ const CallNow = () => {
 
           {/* Footer */}
           <div className="bg-gray-100 p-3 text-center text-sm text-gray-600">
-            SafarSaga Travel Support
+            SaiKrupa Travel Support
           </div>
         </div>
       )}

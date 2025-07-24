@@ -2,12 +2,12 @@
   "phoneNumber": "9226409449",
   "heroSection": {
     "heading": "Experience The Journey With",
-    "highlight": "SafarSaga Travels",
+    "highlight": "SaiKrupa Travels",
     "subtext": "Premium travel services with comfort, safety and reliability",
     "buttons": [
       {
         "label": "Book Now",
-        "link": "/book",
+        "link": "/contact",
         "type": "primary"
       },
       {
@@ -73,7 +73,7 @@
     {
       "id": 2,
       "name": "Priya Sharma",
-      "comment": "Our family trip was made comfortable thanks to safarsagatravel Tours.",
+      "comment": "Our family trip was made comfortable thanks to saikrupatravel Tours.",
       "rating": 4
     },
     {

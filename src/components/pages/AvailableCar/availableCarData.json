@@ -16,7 +16,7 @@
       "transmission": "Automatic",
       "fuel": "Diesel",
       "rating": 4.5,
-      "price": 2500,
+ 
       "image": "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "features": ["Free Cancellation", "24/7 Support", "GPS Navigation"]
     },
@@ -29,7 +29,7 @@
       "transmission": "Manual",
       "fuel": "Petrol",
       "rating": 4.2,
-      "price": 2000,
+   
       "image": "https://images.unsplash.com/photo-1606016159991-dfe4f2746ad5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "features": ["Free Cancellation", "Child Seat Available"]
     },
@@ -42,7 +42,7 @@
       "transmission": "Automatic",
       "fuel": "Petrol",
       "rating": 4.8,
-      "price": 5000,
+   
       "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "features": ["Chauffeur Service", "Premium Sound System", "WiFi"]
     },
@@ -55,7 +55,7 @@
       "transmission": "Automatic",
       "fuel": "Electric",
       "rating": 4.3,
-      "price": 2200,
+    
       "image": "https://images.unsplash.com/photo-1620395450365-2049c3b72d8e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "features": ["Eco Friendly", "Fast Charging"]
     },
@@ -68,7 +68,7 @@
       "transmission": "Manual",
       "fuel": "Petrol",
       "rating": 4.1,
-      "price": 1800,
+   
       "image": "https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "features": ["Economical", "Spacious Boot"]
     },
@@ -81,7 +81,7 @@
       "transmission": "Automatic",
       "fuel": "Diesel",
       "rating": 4.7,
-      "price": 5500,
+     
       "image": "https://images.unsplash.com/photo-1549317661-bd32af8d21f7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       "features": ["Premium Interior", "Panoramic Sunroof"]
     }
