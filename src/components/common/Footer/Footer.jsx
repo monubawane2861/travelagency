@@ -170,7 +170,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
           <p>
-            &copy; {new Date().getFullYear()} Saikrupa travel. All Rights
+            &copy; {new Date().getFullYear()} sagasafar travel. All Rights
             Reserved.
           </p>
           <p className="mt-1 text-sm">Designed with ❤️ for travelers</p>
