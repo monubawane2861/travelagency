@@ -11,7 +11,7 @@ import {
   FaYoutube,
 } from "react-icons/fa";
 import { MdDirectionsBus } from "react-icons/md";
-import saikrupaaLogo from "../../../assets/image/logo.png"; // Make sure the image is in src/assets/
+import saikrupaaLogo from "../../../assets/image/safarsaga.png"; // Make sure the image is in src/assets/
 
 const Footer = () => {
   return (
@@ -117,15 +117,13 @@ const Footer = () => {
               <div className="flex items-start space-x-3">
                 <FaPhone className="text-yellow-400 mt-1" />
                 <div>
-                  <p className="text-gray-300">+91 9022979253</p>
-                  <p className="text-gray-300">+91 8530335944</p>
+                  <p className="text-gray-300">+91 0987654321</p>
                 </div>
               </div>
               <div className="flex items-start space-x-3">
                 <FaPhone className="text-yellow-400 mt-1" />
                 <div>
-                  <p className="text-gray-300">+91 7264078250</p>
-                  <p className="text-gray-300">+91 9579297434</p>
+                  <p className="text-gray-300">+91 1234567890</p>
                 </div>
               </div>
               {/* 
@@ -135,9 +133,7 @@ const Footer = () => {
               </div> */}
               <div className="flex items-start space-x-3">
                 <FaMapMarkerAlt className="text-yellow-400 mt-1" />
-                <p className="text-gray-300">
-                  Ojhan taluka Nifad, district Nashik
-                </p>
+                <p className="text-gray-300">Pune, maharashtra</p>
               </div>
             </div>
           </div>

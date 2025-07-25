@@ -4,7 +4,7 @@ import safarsaga from "../../../assets/image/safarsaga.png"; // Make sure the im
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const phoneNumber = "9022979253";
+  const phoneNumber = "1234567890";
   const location = useLocation();
   const menuRef = useRef(null);
 
@@ -43,7 +43,7 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-3">
             <img
               src={safarsaga}
-              alt="Sai Krupa Logo"
+              alt="Sagasafar Logo"
               className="h-16 w-auto object-contain"
             />
           </Link>

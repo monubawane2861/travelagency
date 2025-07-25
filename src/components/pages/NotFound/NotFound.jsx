@@ -33,7 +33,7 @@ const NotFound = () => {
             Go to Home
           </Link>
           <a
-            href="tel:9579297434"
+            href="tel:1234567890"
             className="bg-yellow-500 hover:bg-yellow-600 text-white font-medium py-2 px-6 rounded-lg flex items-center justify-center transition duration-300"
           >
             <FaPhoneAlt className="mr-2" />

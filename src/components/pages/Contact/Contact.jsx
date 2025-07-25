@@ -91,7 +91,7 @@ const Contact = () => {
               {/* WhatsApp & Email Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <a
-                  href={`https://wa.me/917264078250?text=Hello, I want to know more about your travel services.`}
+                  href={`https://wa.me/911234567890?text=Hello, I want to know more about your travel services.`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-green-600 hover:bg-green-700 text-white flex items-center justify-center gap-2 px-4 py-3 rounded-lg w-full"
@@ -115,8 +115,8 @@ const Contact = () => {
                 <FaPhone className="text-blue-500 mr-3" />
                 <h3 className="font-semibold text-lg">Phone</h3>
               </div>
-              <p>+91 9022979253</p>
-              <p>+91 9579297434</p>
+              <p>+91 1234567890</p>
+              <p>+91 0987654321</p>
               <p className="text-blue-600 mt-1">24/7 Support</p>
             </div>
 
@@ -135,7 +135,7 @@ const Contact = () => {
                 <FaMapMarkerAlt className="text-yellow-600 mr-3" />
                 <h3 className="font-semibold text-lg">Location</h3>
               </div>
-              <p>Ojhar, Taluka Nifad, District Nashik</p>
+              <p>Pune, maharastra</p>
             </div>
 
             <div className="bg-white p-5 md:p-6 rounded-xl shadow-md border-l-4 border-red-500">
