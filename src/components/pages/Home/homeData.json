@@ -1,5 +1,5 @@
 {
-  "phoneNumber": "9226409449",
+  "phoneNumber": "1234567890",
   "heroSection": {
     "heading": "Experience The Journey With",
     "highlight": "Sagasafar Travels",
@@ -89,7 +89,7 @@
     "buttons": [
       {
         "label": "Call Now",
-        "link": "tel:9226409449",
+        "link": "tel:1234567890",
         "type": "primary"
       },
       {
